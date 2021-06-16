@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { CustomValidator } from '../customValidator/custom-validator'
 
 @Component({
   selector: 'app-register',
@@ -23,19 +24,22 @@ export class RegisterComponent implements OnInit {
         Validators.minLength(8)
         ]
       ],
-      password: ['', Validators.required],
-      confirmPass: ['', Validators.required]
+      password: ['', [
+        Validators.required,
+        Validators.minLength(8),
+        Validators.pattern(/\d/),
+        Validators.pattern(/[A-Z]/)
+      ]],
+      confirmPass: ['', [Validators.required]],
+    },
+    {
+      validators: CustomValidator.passwordMatch
     });
   }
 
   ngOnInit(): void {
 
-    if (true) {
-      console.log("hola mundo");
-    }
   }
-
-
 
   get f() {
     return this.registerForm.controls

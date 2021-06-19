@@ -8,6 +8,10 @@ const routes: Routes = [
     loadChildren: () => import('./landing-page/landing-page.module').then(m => m.LandingPageModule)
   },
   {
+    path: 'admin',
+    loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule)
+  },
+  {
     path: 'error',
     component: ErrorComponent
   },

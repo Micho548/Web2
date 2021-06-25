@@ -23,15 +23,15 @@ package com.staxrt.tutorial.controller;
 import com.staxrt.tutorial.exception.ResourceNotFoundException;
 import com.staxrt.tutorial.model.User;
 import com.staxrt.tutorial.repository.UserRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
-
-import javax.validation.Valid;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import javax.validation.Valid;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
 
 /**
  * The type User controller.
@@ -50,7 +50,8 @@ public class UserController {
    *
    * @return the list
    */
-  @GetMapping("/users")
+  @GetMapping("/users") // (/api/v1/users)
+  // @CrossOrigin(origins = "http://localhost:4200")
   public List<User> getAllUsers() {
     return userRepository.findAll();
   }
@@ -131,6 +132,13 @@ public class UserController {
 
   @GetMapping("/Hello")
   public String nums() {
-    return "Hello world!!";
+
+    int mayor = mayor(2,3);
+
+    return Integer.toString(mayor);
+  }
+
+  public int mayor(int x, int y){
+    return x > y? x: y;
   }
 }

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Users } from '../@Models/Users';
 
 const httpOptions = {'content-type': 'application/json'}
 
@@ -11,8 +12,9 @@ export class UsersService {
 
   constructor( private http: HttpClient) { }
 
-  getUsers(): Observable<any> {
+  public getUsers(): Observable<Users> {
     const headers = httpOptions;
-    return this.http.get<any>('https://api.github.com/users')
+    // return this.http.get<Users>('https://api.github.com/users');
+    return this.http.get<any>('http://localhost:8080/api/v1/users', {headers});
   }
 }

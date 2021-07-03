@@ -15,6 +15,6 @@ export class UsersService {
   public getUsers(): Observable<Users> {
     const headers = httpOptions;
     // return this.http.get<Users>('https://api.github.com/users');
-    return this.http.get<any>('http://localhost:8080/api/v1/users', {headers});
+    return this.http.get<Users>('http://localhost:8080/api/v1/users', {headers});
   }
 }

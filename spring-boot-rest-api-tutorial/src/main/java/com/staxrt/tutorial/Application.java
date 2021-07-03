@@ -25,11 +25,7 @@ public class Application {
       @Override
       public void addCorsMappings(CorsRegistry registry){
         registry.addMapping("/**")
-          .allowedOrigins("http://localhost:4200")
-          .allowedOrigins("https://14120rev.google.com")
-          .allowedMethods("GET", "PUT")
-          .allowedHeaders("ContenType")
-          .allowCredentials(false).maxAge(3600);
+          .allowedOrigins("http://localhost:1200");
       }
     };
   }

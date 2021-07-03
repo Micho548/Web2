@@ -10,6 +10,7 @@ import { LandingPageComponent } from './landing-page.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ModalComponent } from './contact/modal/modal.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     HelpComponent,
     LandingPageComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    ModalComponent
   ],
   imports: [
     CommonModule,

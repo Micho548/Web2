@@ -1,23 +1,26 @@
 <h1>My custom Table</h1>
 
 <table>
-  <!-- <tr>
+  <tr>
     <th *ngFor="let column of headers">
       {{column}}
     </th>
-  </tr> -->
+  </tr>
   <tr *ngFor="let row of rows">
     <td >
       {{row.id}}
-    </td>
-    <td >
-      {{row.email}}
     </td>
     <td >
       {{row.firstName}}
     </td>
     <td >
       {{row.lastName}}
+    </td>
+    <td >
+      {{row.email}}
+    </td>
+    <td >
+      {{row.createdBy}}
     </td>
   </tr>
 </table>
